@@ -40,69 +40,81 @@ namespace Messenger
 
             DB.UserCont.Add(user1);
             DB.SaveChanges();
-            Console.WriteLine("BD conect +new User!");
+            Console.WriteLine($"BD conect +new {user1.Name} are added!");
             Console.ReadKey();
+            MainMenu();
         }
 
         static public void Authorisation(UserContext DB)
         {
             
-        }
-       //static public void 
-        static void Main(string[] args)
-        {
             
-            using (UserContext db = new UserContext())
-            {
-            short curItem = 0, c;
+        }
+        static public void MainMenu()
+        {
+            short curItem = 0;
+            string[] menuItems = { "1", "2", "3", "4" };
+            Menu(curItem, menuItems);
+        }
+       static public short Menu( short curItem , string[] menuItem )
+        {
             ConsoleKeyInfo key;
-            string[] menuItems = { "Add new User", "Add new Recepient", "3", "4" };
-
+            short c;
             do
             {
                 Console.Clear();
-                Console.WriteLine("Pick an option . . .");
-                
-                for (c = 0; c < menuItems.Length; c++)
+                Console.WriteLine("Select");
+
+                for (c = 0; c < menuItem.Length; c++)
                 {
-                   
+
                     if (curItem == c)
                     {
                         Console.Write(">>");
-                        Console.WriteLine(menuItems[c]);
+                        Console.WriteLine(menuItem[c]);
                     }
                     else
                     {
-                        Console.WriteLine(menuItems[c]);
+                        Console.WriteLine(menuItem[c]);
                     }
                 }
-                Console.Write("Select your choice with the arrow keys.");
+                Console.Write("Select and press {Enter}");
 
                 key = Console.ReadKey(true);
-           
+
                 if (key.Key.ToString() == "DownArrow")
                 {
                     curItem++;
-                    if (curItem > menuItems.Length - 1) curItem = 0;
+                    if (curItem > menuItem.Length - 1) curItem = 0;
                 }
                 else
                 {
                     if (key.Key.ToString() == "UpArrow")
                     {
                         curItem--;
-                        if (curItem < 0) curItem = Convert.ToInt16(menuItems.Length - 1);
+                        if (curItem < 0) curItem = Convert.ToInt16(menuItem.Length - 1);
                     }
                 }
-        } while (key.KeyChar != 13) ;
+            } while (key.KeyChar != 13);
 
-              
+            return curItem;
+        }
+        static void Main(string[] args)
+        {
+            
+            using (UserContext db = new UserContext())
+            {
+            short curItem = 0;
+            string[] menuItems = { "Add new User", "Add new Recepient", "3", "4" };
+               
+            curItem= Menu(curItem, menuItems);
             switch (curItem)
             {
                 case 0: Registration(db) ;break;
                 case 1: Console.WriteLine(" case 1"); break;
-            }
-
-            
+                case 2: Console.WriteLine(" case 2"); break;
+                case 3: Console.WriteLine(" case 3"); break;
+                }
 
             }
 

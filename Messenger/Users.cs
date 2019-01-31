@@ -27,6 +27,10 @@ namespace Messenger
                 {
                     phoneNambver = value;
                 }
+                else
+                {
+                    Console.WriteLine("wrong phone number!");
+                }
             }
         }
 
@@ -38,7 +42,7 @@ namespace Messenger
             }
             set
             {
-                Regex Rexphone = new Regex(@"^\+\d{12}");
+                Regex Rexphone = new Regex(@"^\d{10}");
                 if (Rexphone.IsMatch(value))
                 {
                     password= value;

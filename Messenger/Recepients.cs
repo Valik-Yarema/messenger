@@ -27,6 +27,10 @@ namespace Messenger
                 {
                     recepientNamber = value;
                 }
+                else
+                {
+                    Console.WriteLine("wrong phone number!");
+                }
             } 
         }
         

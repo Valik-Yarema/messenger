@@ -16,7 +16,7 @@ namespace Messenger
 
             public DbSet<Users> UserCont { get; set; }
             public DbSet<Messeges> MessegesCont { get; set; }
-            public DbSet<Recepients> Recepients { get; set; }
+            public DbSet<Recepients> RecepientsCont { get; set; }
         }
     
 }

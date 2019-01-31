@@ -55,12 +55,15 @@
     <Compile Include="Migrations\201901311319179_AddCompanyMigration.Designer.cs">
       <DependentUpon>201901311319179_AddCompanyMigration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201901312120435_AddCompanyMigration1.cs" />
+    <Compile Include="Migrations\201901312120435_AddCompanyMigration1.Designer.cs">
+      <DependentUpon>201901312120435_AddCompanyMigration1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recepients.cs" />
     <Compile Include="UserContext.cs" />
-    <Compile Include="UserInterface.cs" />
     <Compile Include="Users.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +73,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201901311319179_AddCompanyMigration.resx">
       <DependentUpon>201901311319179_AddCompanyMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201901312120435_AddCompanyMigration1.resx">
+      <DependentUpon>201901312120435_AddCompanyMigration1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
