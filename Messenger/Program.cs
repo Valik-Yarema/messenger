@@ -8,7 +8,7 @@ namespace Messenger
 {
     class Program
     {
-       static public void NewUser(UserContext userContent)
+       static public void Registration(UserContext DB)
         {
             Users user1 = new Users();
 
@@ -38,21 +38,25 @@ namespace Messenger
             }
             while (user1.Adress == null);
 
-            userContent.UserCont.Add(user1);
-            userContent.SaveChanges();
+            DB.UserCont.Add(user1);
+            DB.SaveChanges();
             Console.WriteLine("BD conect +new User!");
             Console.ReadKey();
         }
 
-
+        static public void Authorisation(UserContext DB)
+        {
+            
+        }
+       //static public void 
         static void Main(string[] args)
         {
+            
             using (UserContext db = new UserContext())
             {
-
             short curItem = 0, c;
             ConsoleKeyInfo key;
-            string[] menuItems = { "Add new User", "Add new Recepient", "", "4" };
+            string[] menuItems = { "Add new User", "Add new Recepient", "3", "4" };
 
             do
             {
@@ -94,7 +98,7 @@ namespace Messenger
               
             switch (curItem)
             {
-                case 0: NewUser(db) ;break;
+                case 0: Registration(db) ;break;
                 case 1: Console.WriteLine(" case 1"); break;
             }
 
