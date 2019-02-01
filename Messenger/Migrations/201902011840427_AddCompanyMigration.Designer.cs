@@ -13,7 +13,7 @@ namespace Messenger.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201902011401438_AddCompanyMigration"; }
+            get { return "201902011840427_AddCompanyMigration"; }
         }
         
         string IMigrationMetadata.Source

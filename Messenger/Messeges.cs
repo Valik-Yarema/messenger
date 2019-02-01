@@ -26,7 +26,7 @@ namespace Messenger
         public Recepients Recepients { get; set; }
 
 
-        [DataMember]
+        
         public DateTime DataMess { get; set; }
         public TimeSpan TimeMess { get; set; }
         [DataMember]

@@ -52,10 +52,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FunctionSet.cs" />
     <Compile Include="Messeges.cs" />
-    <Compile Include="Migrations\201902011401438_AddCompanyMigration.cs" />
-    <Compile Include="Migrations\201902011401438_AddCompanyMigration.Designer.cs">
-      <DependentUpon>201902011401438_AddCompanyMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201902011840427_AddCompanyMigration.cs" />
+    <Compile Include="Migrations\201902011840427_AddCompanyMigration.Designer.cs">
+      <DependentUpon>201902011840427_AddCompanyMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -65,12 +66,14 @@
     <Compile Include="Users.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201902011401438_AddCompanyMigration.resx">
-      <DependentUpon>201902011401438_AddCompanyMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201902011840427_AddCompanyMigration.resx">
+      <DependentUpon>201902011840427_AddCompanyMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
