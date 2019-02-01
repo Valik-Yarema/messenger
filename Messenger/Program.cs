@@ -12,12 +12,11 @@ namespace Messenger
 {
     class Program
     {
-        public static UserContext UsersContDB = new UserContext();
-
-       
-
-        private static string[] menuItems = { "Registration", "Authentication", "Add new Recepient","Main Menu", "Close App" };
         static bool Work = true;
+
+        public static UserContext UsersContDB = new UserContext();
+        private static string[] menuItems = { "Registration", "Authentication", "Add new Recepient","Main Menu", "Close App" };
+   
 
         static public void Registration(UserContext DB)
         {
@@ -151,11 +150,21 @@ namespace Messenger
                 Console.WriteLine("Authorisation complete");
                 Console.ReadKey();
                 //send messeg
-                SendMessege(AvtUser);
+                SelectMessenger(AvtUser);
+               
             }
-
-            
-
+        }
+        static public void SelectMessenger(Users avtUser)
+        {
+            string[] SelMes = { "Write to one", "write to everyone","Menu" };
+            short curItem = 0;
+            switch (Menu(curItem, SelMes))
+            {
+                case 0: SendMessege(avtUser); ; break;
+                case 1: SendMessegeAll(avtUser); ; break;
+                case 2: FirstMenu(); break;
+              
+            }
         }
         static public void SelectAction()
         {
@@ -227,6 +236,10 @@ namespace Messenger
 
         }
 
+        public static void SendMessegeAll(Users UserC)
+        {
+
+        }
         public static void SendMessege(Users UserC)
         {
             Recepients currentRecepient = new Recepients();
@@ -249,8 +262,6 @@ namespace Messenger
                 UsersContDB.RecepientsCont.Add(currentRecepient);
                 UsersContDB.SaveChanges();
                 Console.Write(UsersContDB.RecepientsCont.FirstOrDefault(p => p.RecepientNumber == currentRecepient.RecepientNumber));
-                //recepient = UsersContDB.RecepientsCont.FirstOrDefault(p => p.RecepientNumber == currentRecepient.RecepientNumber);
-                //recepient = MessendgerDB.Recepients.Find(currentRecepient.RecepientPhone);
             }
 
             Console.WriteLine("Text messege:");
@@ -263,7 +274,7 @@ namespace Messenger
 
             Messeges[] messageArray = new Messeges[1];
             messageArray[0] = message;
-           //SaveInFileJson("Test1", messageArray);
+           SaveInFileJson("Test2", messageArray);
          
            Console.WriteLine("Messege are sended. Press any key to continue");
             Console.ReadKey();
@@ -271,9 +282,9 @@ namespace Messenger
 
         public static void SaveInFileJson<T>(string FileName, T[] data)
         {
-           DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(T[]));
-           
-            using (FileStream fs = new FileStream(FileName, FileMode.OpenOrCreate))
+            DataContractJsonSerializer jsonFormatter = new DataContractJsonSerializer(typeof(T[]));
+
+            using (FileStream fs = new FileStream("Messeges.json", FileMode.OpenOrCreate))
             {
                 jsonFormatter.WriteObject(fs, data);
             }
