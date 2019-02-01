@@ -42,6 +42,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,13 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Messeges.cs" />
-    <Compile Include="Migrations\201901311319179_AddCompanyMigration.cs" />
-    <Compile Include="Migrations\201901311319179_AddCompanyMigration.Designer.cs">
-      <DependentUpon>201901311319179_AddCompanyMigration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201901312120435_AddCompanyMigration1.cs" />
-    <Compile Include="Migrations\201901312120435_AddCompanyMigration1.Designer.cs">
-      <DependentUpon>201901312120435_AddCompanyMigration1.cs</DependentUpon>
+    <Compile Include="Migrations\201902011401438_AddCompanyMigration.cs" />
+    <Compile Include="Migrations\201902011401438_AddCompanyMigration.Designer.cs">
+      <DependentUpon>201902011401438_AddCompanyMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -71,11 +69,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201901311319179_AddCompanyMigration.resx">
-      <DependentUpon>201901311319179_AddCompanyMigration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201901312120435_AddCompanyMigration1.resx">
-      <DependentUpon>201901312120435_AddCompanyMigration1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201902011401438_AddCompanyMigration.resx">
+      <DependentUpon>201902011401438_AddCompanyMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 namespace Messenger
 {
     class Recepients
-    { [Key]
-        public int IdRecepient { get; set; }
+    {   [Key]
+        public int RecepientId { get; set; }
 
-        private string recepientNamber;
-        public string RecepientNamber
+        private string recepientNumber;
+        public string RecepientNumber
         {
             get
             {
-                return this.recepientNamber;
+                return this.recepientNumber;
             }
             
             set
@@ -25,7 +25,7 @@ namespace Messenger
                 Regex Rexphone = new Regex(@"^\+\d{12}");
                 if (Rexphone.IsMatch(value))
                 {
-                    recepientNamber = value;
+                    recepientNumber = value;
                 }
                 else
                 {
@@ -53,10 +53,10 @@ namespace Messenger
             }
         }
 
-        public ICollection<Recepients> RecepientsColl { get; set; }
-        Recepients()
+        public ICollection<Messeges> RecepientsColl { get; set; }
+        public Recepients()
         {
-            RecepientsColl = new List<Recepients>();
+            RecepientsColl = new List<Messeges>();
         }
     }
 }

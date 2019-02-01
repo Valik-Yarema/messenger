@@ -9,21 +9,30 @@ using System.Threading.Tasks;
 namespace Messenger
 {
     class Messeges
-    {
-        [Key]
-        public int IdMesseg { get; set; }
+    {   [Key]
+        public int MessegesId { get; set; }
 
-        public int? SenderPhone { get; set; }
-        [ForeignKey("SenderPhone")]
+        
+        public int? UserId { get; set; }
+
+       
+        public int? RecepientId { get; set; }
+
+        [ForeignKey("UserId")]
         public Users Users { get; set; }
-
-        public int? RecepientPhone { get; set; }
-        [ForeignKey("RecepientPhone")]
+        [ForeignKey("RecepientId")]
         public Recepients Recepients { get; set; }
 
-        public DataType DataMess { get; set; }
-        public DataType TimeMess { get; set; }
+    
+
+        public DateTime DataMess { get; set; }
+        public TimeSpan TimeMess { get; set; }
         public string MessegeText { get; set; }
         
+        public Messeges()
+        {
+            DataMess = DateTime.Now.Date;
+            TimeMess = DateTime.Now.TimeOfDay;
+        }
     }
 }

@@ -10,13 +10,13 @@ namespace Messenger
 {
     class Users
     {   [Key]
-        public int PhoneId { get; set; }
-        private string phoneNambver;
-        public string PhoneNambver
+        public int UserId { get; set; }
+        private string phoneNumber;
+        public string PhoneNumber
         {
             get
             {
-                return this.phoneNambver;
+                return this.phoneNumber;
             }
 
 
@@ -25,7 +25,7 @@ namespace Messenger
                 Regex Rexphone = new Regex(@"^\+\d{12}");
                 if (Rexphone.IsMatch(value))
                 {
-                    phoneNambver = value;
+                    phoneNumber = value;
                 }
                 else
                 {
@@ -69,10 +69,10 @@ namespace Messenger
             }
         }
 
-        public ICollection<Users> UsersColl { get; set; }
+        public ICollection<Messeges> UsersColl { get; set; }
         public Users()
         {
-            UsersColl = new List<Users>();
+            UsersColl = new List<Messeges>();
         }
 
     }
