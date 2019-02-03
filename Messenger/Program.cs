@@ -12,15 +12,17 @@ namespace Messenger
         static void Main(string[] args)
         {
 
-            using (FunctionSet.UsersContDB)
-            {
-                do
-                {
-                 FunctionSet.FirstMenu();
-                } while (Work);
-
-                //Console.ReadKey();
-            }
+             using (FunctionSet.UsersContDB)
+               {
+                   do
+                   {
+                    FunctionSet.FirstMenu();
+                   } while (Work);
+               }
+              
+           
+            Console.ReadKey();
+            
         }
     }
 }

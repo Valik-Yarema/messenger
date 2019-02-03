@@ -61,6 +61,7 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadRecord.cs" />
     <Compile Include="Recepients.cs" />
     <Compile Include="UserContext.cs" />
     <Compile Include="Users.cs" />
